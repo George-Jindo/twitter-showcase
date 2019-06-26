@@ -1,0 +1,46 @@
+.popout {
+    height:100%;
+    background: #fff;
+    box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    max-width: 400px;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+.popout.open {
+    transform: translateX(0);
+}
+
+.popout ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.popout li {
+    margin: 0.5rem 0;
+}
+
+.popout a {
+    color: rgb(29, 29, 29);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.popout a:hover,
+.popout a:active {
+    color: #1da1f2;
+}
+
+@media (min-width: 769px) {
+    .popout {
+        display: none;
+    }
+}

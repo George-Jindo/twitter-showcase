@@ -1,0 +1,59 @@
+/* Tweet Finder Styling */
+
+.landing-grid {
+    background: #1DA1F2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #1DA1F2, #021B79,);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #1DA1F2, #021B79); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-align: center;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.search-box {
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    background: #c7c7c7;
+    height: 40px;
+    border-radius: 35px;
+    padding: 10px; 
+}
+
+.search-box:hover > .search-txt {
+    width: 300px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn {
+    background: #1DA1F2;
+}
+
+.search-btn {
+    color: #031B78;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #c7c7c7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}

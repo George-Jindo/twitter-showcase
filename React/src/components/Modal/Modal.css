@@ -22,6 +22,7 @@
 
 .modal_content {
     padding: 1rem;
+    overflow-y: auto;
 }
 
 .modal_actions {

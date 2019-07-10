@@ -12,6 +12,34 @@ class TweetFinder extends Component {
 
     startSearchingHandler = () => {
         this.setState({ searching: true });
+
+        /*const headers = new Headers();
+
+        headers.set(
+            'Authorization',
+            'AAAAAAAAAAAAAAAAAAAAACQn%2FAAAAAAA5oJWy86Mxwlq3nJshvT29t7kkEQ%3D7lqUKw7wyEzRC0G9Fc7c5xbKFzOrgAtOZBLycIiQMOWPduFJYe'
+        );
+
+        // Fetch request
+
+        fetch('https://api.twitter.com/1.1/search/tweets.json?q=cars', {
+            headers: headers,
+            method: 'GET'
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                console.log('data: ', data);
+            });*/
+        setTimeout(() => {
+            // emulate data coming back from api
+            const data = 'Twitter API Goes Here';
+
+            this.setState({
+                tweet: data
+            });
+        }, 2000);
     };
 
     modalPrevHandler = () => {
@@ -46,6 +74,7 @@ class TweetFinder extends Component {
                                     toPrev
                                     toNext
                                     canClose
+                                    tweet={this.state.tweet}
                                     onPrev={this.modalPrevHandler}
                                     onNext={this.modalNextHandler}
                                     onClose={this.modalCloseHandler}

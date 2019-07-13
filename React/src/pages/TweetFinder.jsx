@@ -6,6 +6,12 @@ import Backdrop from '../components/Backdrop/Backdrop';
 import Modal from '../components/Modal/Modal';
 
 class TweetFinder extends Component {
+    // Handle Change for user input on search field
+    handleChange(event) {
+        this.setState({ input: event.target.value })
+    }
+
+
     state = {
         searching: false
     };
@@ -88,6 +94,7 @@ class TweetFinder extends Component {
                                     className='search-txt'
                                     type='text'
                                     placeholder='Enter keyword or Twitter handle here'
+                                    value={this.state.input}
                                 />
                                 <a
                                     className='search-btn'

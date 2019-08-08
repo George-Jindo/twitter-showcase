@@ -48,14 +48,6 @@ class TweetFinder extends Component {
         }, 2000);
     };
 
-    modalPrevHandler = () => {
-        this.setState({ searching: false });
-    };
-
-    modalNextHandler = () => {
-        this.setState({ searching: false });
-    };
-
     modalCloseHandler = () => {
         this.setState({ searching: false });
     };
@@ -81,8 +73,6 @@ class TweetFinder extends Component {
                                     toNext
                                     canClose
                                     tweet={this.state.tweet}
-                                    onPrev={this.modalPrevHandler}
-                                    onNext={this.modalNextHandler}
                                     onClose={this.modalCloseHandler}
                                 >
                                     <p>Modal Content</p>

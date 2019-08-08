@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Grid, Cell } from 'react-mdl';
 import './TweetFinder.css';
 
@@ -6,6 +7,16 @@ import Backdrop from '../components/Backdrop/Backdrop';
 import Modal from '../components/Modal/Modal';
 
 class TweetFinder extends Component {
+    getQuery = (e) => {
+        e.preventDefault();
+        const query = e.target.elements.query.value;
+        console.log(query);
+        axios.get('https://api.twitter.com/1.1/search/tweets.json?q=${query}');
+            .then((res) => {
+            console.log(res);
+        })
+    }
+
     // Handle Change for user input on search field
     handleChange(event) {
         this.setState({ input: event.target.value })
@@ -69,8 +80,6 @@ class TweetFinder extends Component {
                             {this.state.searching && (
                                 <Modal
                                     title='Here are your Tweets!'
-                                    toPrev
-                                    toNext
                                     canClose
                                     tweet={this.state.tweet}
                                     onClose={this.modalCloseHandler}
@@ -83,8 +92,9 @@ class TweetFinder extends Component {
                                 <input
                                     className='search-txt'
                                     type='text'
+                                    name='query'
                                     placeholder='Enter keyword or Twitter handle here'
-                                    value={this.state.input}
+                                    value={this.getQuery}
                                 />
                                 <a
                                     className='search-btn'

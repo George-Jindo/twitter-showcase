@@ -7,25 +7,21 @@ import Backdrop from '../components/Backdrop/Backdrop';
 import Modal from '../components/Modal/Modal';
 
 class TweetFinder extends Component {
-    getQuery = (e) => {
-        e.preventDefault();
-        const query = e.target.elements.query.value;
-        console.log(query);
-        axios.get('https://api.twitter.com/1.1/search/tweets.json?q=${query}');
-            .then((res) => {
-            console.log(res);
-        })
+    state = {
+        keyword: '',
+        searching: false
     }
+
+    //Creates the Keyword value to user input
+    updateKeyword(event) {
+        this.setState({ keyword: event.target.value });
+    }
+
 
     // Handle Change for user input on search field
     handleChange(event) {
         this.setState({ input: event.target.value })
     }
-
-
-    state = {
-        searching: false
-    };
 
     startSearchingHandler = () => {
         this.setState({ searching: true });
@@ -49,6 +45,14 @@ class TweetFinder extends Component {
             .then(function (data) {
                 console.log('data: ', data);
             });*/
+
+        /*getQuery = (e) => {
+            axios.get('https://api.twitter.com/1.1/search/tweets.json?q=${query}')
+                .then((res) => {
+                    console.log(res);
+                })
+        }*/
+
         setTimeout(() => {
             // emulate data coming back from api
             const data = 'Twitter API Goes Here';
@@ -64,6 +68,9 @@ class TweetFinder extends Component {
     };
 
     render() {
+        const {
+            keyword
+        } = this.state;
         return (
             <React.Fragment>
                 <div
@@ -92,9 +99,9 @@ class TweetFinder extends Component {
                                 <input
                                     className='search-txt'
                                     type='text'
-                                    name='query'
-                                    placeholder='Enter keyword or Twitter handle here'
-                                    value={this.getQuery}
+                                    name='keyword'
+                                    placeholder='Enter Keyword Here'
+                                    onChange={this.updateKeyword.bind(this)}
                                 />
                                 <a
                                     className='search-btn'

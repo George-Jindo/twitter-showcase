@@ -26,6 +26,12 @@ class TweetFinder extends Component {
     startSearchingHandler = () => {
         this.setState({ searching: true });
 
+        axios.get('https://api.twitter.com/1.1/search/tweets.json?q=${query}')
+            .then((res) => {
+                console.log(res);
+                this.setState({ tweets: res.data });
+            })
+
         /*const headers = new Headers();
 
         headers.set(

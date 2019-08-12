@@ -1,17 +1,26 @@
+require("dotenv").config();
 const express = require('express');
 const app = express();
 const path = require('path');
 const axios = require('axios');
-const cors = require('cors');
 const port = process.env.PORT || 5000;
-
-app.use(cors());
-
-const url = 'https://api.twitter.com/1.1/search/tweets.json?q=cars';
 
 // test api
 app.get('/api/tweet', (req, res) => {
-    res.send(url);
+    const url = 'https://api.twitter.com/1.1/search/tweets.json?q=cars';
+
+    const config = {
+        headers: { 'Authorization': "Bearer " + process.env.REACT_APP_TWITTER_BEARER_TOKEN }
+    }
+
+    axios.get(url, config)
+        .then((response) => {
+            res.send(response.data);
+            console.log('Hello');
+        })
+        .catch((error) => {
+            res.sendStatus(500);
+        })
 });
 
 

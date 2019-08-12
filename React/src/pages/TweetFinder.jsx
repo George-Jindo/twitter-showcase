@@ -25,24 +25,7 @@ class TweetFinder extends Component {
 
     startSearchingHandler = () => {
         this.setState({ searching: true });
-
-        axios.get('https://api.twitter.com/1.1/search/tweets.json?q=${query}')
-            .then((res) => {
-                console.log(res);
-                this.setState({ tweets: res.data });
-            })
-
-        /*const headers = new Headers();
-
-        headers.set(
-            'Authorization',
-            'AAAAAAAAAAAAAAAAAAAAACQn%2FAAAAAAA5oJWy86Mxwlq3nJshvT29t7kkEQ%3D7lqUKw7wyEzRC0G9Fc7c5xbKFzOrgAtOZBLycIiQMOWPduFJYe'
-        );
-
-        // Fetch request
-
-        fetch('https://api.twitter.com/1.1/search/tweets.json?q=cars', {
-            headers: headers,
+        fetch('/api/test', {
             method: 'GET'
         })
             .then(function (response) {
@@ -50,23 +33,8 @@ class TweetFinder extends Component {
             })
             .then(function (data) {
                 console.log('data: ', data);
-            });*/
-
-        /*getQuery = (e) => {
-            axios.get('https://api.twitter.com/1.1/search/tweets.json?q=${query}')
-                .then((res) => {
-                    console.log(res);
-                })
-        }*/
-
-        setTimeout(() => {
-            // emulate data coming back from api
-            const data = 'Twitter API Goes Here';
-
-            this.setState({
-                tweet: data
             });
-        }, 2000);
+
     };
 
     modalCloseHandler = () => {

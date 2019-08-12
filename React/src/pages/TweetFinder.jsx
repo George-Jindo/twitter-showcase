@@ -27,14 +27,21 @@ class TweetFinder extends Component {
     startSearchingHandler = (query, token) => {
         this.setState({ searching: true });
 
-        fetch('http://localhost:5000/api/test', {
+        const headers = new Headers();
+
+        headers.set('Authorization', 'Bearer AAAAAAAAAAAAAAAAAAAAACQn%2FAAAAAAA5oJWy86Mxwlq3nJshvT29t7kkEQ%3D7lqUKw7wyEzRC0G9Fc7c5xbKFzOrgAtOZBLycIiQMOWPduFJYe')
+
+        fetch('https://api.twitter.com/1.1/search/tweets.json?q=cars', {
+            headers: headers,
             method: 'GET'
+
         })
             .then(function (resp) {
                 return resp.json();
             })
             .then(function (data) {
                 console.log('data: ', data);
+                //this.setState({ tweet: data });
             });
 
     };

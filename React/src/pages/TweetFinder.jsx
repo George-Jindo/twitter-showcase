@@ -23,13 +23,15 @@ class TweetFinder extends Component {
         this.setState({ input: event.target.value })
     }
 
-    startSearchingHandler = () => {
+
+    startSearchingHandler = (query, token) => {
         this.setState({ searching: true });
-        fetch('/api/test', {
+
+        fetch('http://localhost:5000/api/test', {
             method: 'GET'
         })
-            .then(function (response) {
-                return response.json();
+            .then(function (resp) {
+                return resp.json();
             })
             .then(function (data) {
                 console.log('data: ', data);
@@ -42,9 +44,7 @@ class TweetFinder extends Component {
     };
 
     render() {
-        const {
-            keyword
-        } = this.state;
+
         return (
             <React.Fragment>
                 <div
@@ -81,7 +81,7 @@ class TweetFinder extends Component {
                                     className='search-btn'
                                     onClick={this.startSearchingHandler}
                                 >
-                                    <i class='fas fa-search' />
+                                    <i className='fas fa-search' />
                                 </a>
                             </div>
                         </Cell>

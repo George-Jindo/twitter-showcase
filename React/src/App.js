@@ -43,58 +43,58 @@ class App extends React.Component {
   render() {
     let backdrop;
     if (this.state.hamburgerOpen) {
-      backdrop = < Backdrop click = {
+      backdrop = < Backdrop click={
         this.backdropClickHandler
       }
       />
     }
-    return ( <
+    return (<
       BrowserRouter >
       <
-      div style = {
-        {
-          height: '100%'
-        }
-      } >
-      <
-      Navbar hamburgerButton = {
-        this.hamburgerButtonClickHandler
-      }
-      /> <
-      MobileHamburgerPopout show = {
-        this.state.hamburgerOpen
-      }
-      /> {
-        backdrop
-      } <
-      Switch >
-      <
-      Route exact path = "/"
-      component = {
-        HomePage
-      }
-      /> <
-      Route path = "/404"
-      component = {
-        NotFound
-      }
-      /> <
-      Route path = "/TweetFinder"
-      component = {
-        TweetFinder
-      }
-      /> <
-      Route path = "/RandomTweet"
-      component = {
-        RandomTweet
-      }
-      /> <
-      Redirect to = "/404" / >
-      <
+      div style={
+          {
+            height: '100%'
+          }
+        } >
+        <
+          Navbar hamburgerButton={
+            this.hamburgerButtonClickHandler
+          }
+        /> <
+          MobileHamburgerPopout show={
+            this.state.hamburgerOpen
+          }
+        /> {
+          backdrop
+        } <
+          Switch >
+          <
+            Route exact path="/"
+            component={
+              HomePage
+            }
+          /> <
+            Route path="/404"
+            component={
+              NotFound
+            }
+          /> <
+            Route path="/TweetFinder"
+            component={
+              TweetFinder
+            }
+          /> <
+            Route path="/RandomTweet"
+            component={
+              RandomTweet
+            }
+          /> <
+            Redirect to="/404" />
+          <
       /Switch> <
       /div> </BrowserRouter >
-    );
-  }
-}
-
+        );
+      }
+    }
+    
 export default App;

@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 
-const name = 'https://api.twitter.com/1.1/search/tweets.json?q=cars';
+const url = 'https://api.twitter.com/1.1/search/tweets.json?q=cars';
 
 // test api
 app.get('/api/tweet', (req, res) => {

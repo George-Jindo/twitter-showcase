@@ -7,10 +7,15 @@ import Backdrop from '../components/Backdrop/Backdrop';
 import Modal from '../components/Modal/Modal';
 
 class TweetFinder extends Component {
-    state = {
-        keyword: '',
-        searching: false
+    constructor() {
+        super();
+        this.state = {
+            keyword: '',
+            tweets: [],
+            searching: false
+        };
     }
+
 
     //Creates the Keyword value to user input
     updateKeyword(event) {
@@ -24,27 +29,20 @@ class TweetFinder extends Component {
     }
 
 
-    startSearchingHandler = (query, token) => {
+    startSearchingHandler = () => {
         this.setState({ searching: true });
 
-        const headers = new Headers();
-
-        headers.set('Authorization', 'Bearer AAAAAAAAAAAAAAAAAAAAACQn%2FAAAAAAA5oJWy86Mxwlq3nJshvT29t7kkEQ%3D7lqUKw7wyEzRC0G9Fc7c5xbKFzOrgAtOZBLycIiQMOWPduFJYe')
-
-        fetch('https://api.twitter.com/1.1/search/tweets.json?q=cars', {
-            headers: headers,
-            method: 'GET'
-
-        })
+        axios.get('http://localhost:5000/api/tweets')
             .then(function (resp) {
                 return resp.json();
             })
             .then(function (data) {
                 console.log('data: ', data);
-                //this.setState({ tweet: data });
+                //this.setState({ tweets: data });
             });
 
     };
+
 
     modalCloseHandler = () => {
         this.setState({ searching: false });

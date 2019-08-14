@@ -29,7 +29,9 @@ app.get('/api/tweets', (req, res) => {
 // Send a GET request to /api/tweets/tweet/random to VIEW a random tweet
 
 // serve static build files from React app
-app.use('/static', express.static(path.join(__dirname, 'react/build/static')));
+app.use('/js', express.static(path.join(__dirname, 'react/build/js')));
+app.use('/manifest.json', express.static(path.join(__dirname, 'react/build/manifest.json')));
+app.use('/media', express.static(path.join(__dirname, 'react/build/media')));
 app.use('/images', express.static(path.join(__dirname, 'react/build/images')));
 
 // create a GET route

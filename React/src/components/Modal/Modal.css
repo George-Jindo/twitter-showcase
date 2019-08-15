@@ -1,10 +1,13 @@
 .modal {
-    width: 90%;
+    height: 500px;
+    width: 500px;
     background: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    text-align: center;
     position: fixed;
     top: 20vh;
-    left: 5%;
+    left: 37%;
+    margin-left: -(50% of width);
     z-index: 300;
 }
 
@@ -21,8 +24,8 @@
 }
 
 .modal_content {
-    padding: 1rem;
-    overflow-y: auto;
+    width: 100%;
+    overflow: hidden;
 }
 
 .modal_actions {
@@ -31,9 +34,10 @@
     padding: 1rem;
 }
 
-@media (min-width: 768px) {
-    .modal {
-        width: 50rem;
-        left: calc((100% - 50rem) / 2);
-    }
+hr {
+   width: 70%; 
 }
+/***
+Tweet CSS
+***/
+

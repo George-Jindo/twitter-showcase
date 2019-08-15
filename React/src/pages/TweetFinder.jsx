@@ -33,13 +33,14 @@ class TweetFinder extends Component {
         this.setState({ searching: true });
 
         axios.get('http://localhost:5000/api/tweets')
-            .then(function (resp) {
-                return resp.json();
+            .then(response => {
+                console.log('data: ', response.data);
+                this.setState({ tweets: response.data });
             })
-            .then(function (data) {
-                console.log('data: ', data);
-                //this.setState({ tweets: data });
-            });
+        /*.then(function (data) {
+            console.log('data: ', data);
+            //this.setState({ tweets: data });
+        });*/
 
     };
 
@@ -67,7 +68,7 @@ class TweetFinder extends Component {
                                 <Modal
                                     title='Here are your Tweets!'
                                     canClose
-                                    tweet={this.state.tweet}
+                                    tweets={this.state.tweets}
                                     onClose={this.modalCloseHandler}
                                 >
                                     <p>Modal Content</p>

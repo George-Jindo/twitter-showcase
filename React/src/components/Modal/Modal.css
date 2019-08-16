@@ -1,14 +1,29 @@
+body{
+    color: #000;
+    font-family: 'Nunito Semibold';
+    text-align: center;
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
 .modal {
-    height: 500px;
-    width: 500px;
-    background: white;
+    width: 90%;
+    /*background: white;*/
+    background-image: url(image/birds.jpg);
+    background-size: 2530px;
+    background-position: 0px 0px;
+	background-repeat: repeat-x;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     text-align: center;
     position: fixed;
-    top: 20vh;
-    left: 37%;
-    margin-left: -(50% of width);
+    top: 10vh;
+    left: 5%;
     z-index: 300;
+
+    animation: animatedBackground 40s linear infinite;
 }
 
 .modal_header {
@@ -23,9 +38,150 @@
     font-size: 1.25rem;
 }
 
-.modal_content {
+#tweet_container{
+    display: grid;
+    /*grid-template-columns: 30% 20% 50%;*/
+    /*grid-template-columns: 1fr 2fr 1fr;*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(280px, auto);
+    grid-gap: 10px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+/*#tweet_container div{
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    /*box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
+} */
+
+.Tweet_1, .Tweet_2, .Tweet_3, .Tweet_4, .Tweet_5, .Tweet_6{
+    background: #fff;
+    height: 100%;
     width: 100%;
-    overflow: hidden;
+    border: 1px solid #000;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+} 
+
+.name_top {
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    color: #1DA1F2;
+    position: absolute;
+    letter-spacing: 2px;
+    font-weight: 300px;
+    top: 140px;
+    text-align: center;
+    display: flex;
+}
+
+/***
+Bottom Names
+***/
+
+.name_bottom {
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    color: #1DA1F2;
+    position: absolute;
+    letter-spacing: 2px;
+    font-weight: 300px;
+    top: 430px;
+    text-align: center;
+    display: flex;
+}
+
+.screen_name_top {
+    font-size: 14px;
+    position: absolute;
+    font-display: "Work Sans", sans-serif;
+    color: #555555;
+    top: 170px;
+    text-align: center;
+}
+
+/***
+Bottom Screen Names
+***/
+
+.screen_name_bottom {
+    font-size: 14px;
+    position: absolute;
+    font-display: "Work Sans", sans-serif;
+    color: #555555;
+    top: 460px;
+    text-align: center;
+}
+
+.divider_top {
+    background-color: #949594;
+    height: 1.5px;
+    width: 50px;
+    position: absolute;
+    top: 195px;
+}
+
+/***
+Bottom Divider
+***/
+
+.divider_bottom {
+    background-color: #949594;
+    height: 1.5px;
+    width: 50px;
+    position: absolute;
+    top: 485px;
+}
+
+.text_top {
+    position: relative;
+    top: 40px;
+    color: #949594;
+    text-align: center;
+    font-size: 18px;
+    font-family: "Work Sans", sans-serif;
+    padding: 0 2px 0 2px;
+}
+
+/***
+Bottom Text
+***/
+
+.text_bottom {
+    position: relative;
+    top: 40px;
+    color: #949594;
+    text-align: center;
+    font-size: 18px;
+    font-family: "Work Sans", sans-serif;
+    padding: 0 2px 0 2px;
+}
+
+.Tweet_img_1, .Tweet_img_2, .Tweet_img_3 {
+    height: 120%;
+    width: 120%;
+    position: absolute;
+    top: 80px;
+    background-size: 100% 100%;
+    padding-top: 5px;
+}
+
+/***
+Bottom Images
+***/
+.Tweet_img_4,.Tweet_img_5, .Tweet_img_6 {
+    height: 120%;
+    width: 120%;
+    position: absolute;
+    top: 375px;
+    background-size: 100% 100%;
+    padding-top: 5px;
 }
 
 .modal_actions {
@@ -34,9 +190,6 @@
     padding: 1rem;
 }
 
-hr {
-   width: 70%; 
-}
 /***
 Tweet CSS
 ***/

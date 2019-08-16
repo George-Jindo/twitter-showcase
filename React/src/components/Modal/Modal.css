@@ -74,8 +74,8 @@ body{
     font-family: "Raleway", sans-serif;
     color: #1DA1F2;
     position: absolute;
-    letter-spacing: 2px;
-    font-weight: 300px;
+    /*letter-spacing: 2px;*/
+    font-weight: 150px;
     top: 140px;
     text-align: center;
     display: flex;
@@ -164,11 +164,11 @@ Bottom Text
 }
 
 .Tweet_img_1, .Tweet_img_2, .Tweet_img_3 {
-    height: 120%;
-    width: 120%;
+    height: 50px;
+    width: 50px;
     position: absolute;
     top: 80px;
-    background-size: 100% 100%;
+    /*background-size: 100% 100%;*/
     padding-top: 5px;
 }
 
@@ -176,11 +176,11 @@ Bottom Text
 Bottom Images
 ***/
 .Tweet_img_4,.Tweet_img_5, .Tweet_img_6 {
-    height: 120%;
-    width: 120%;
+    height: 50px;
+    width: 50px;
     position: absolute;
     top: 375px;
-    background-size: 100% 100%;
+    /*background-size: 100% 100%;*/
     padding-top: 5px;
 }
 

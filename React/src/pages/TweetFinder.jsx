@@ -23,25 +23,17 @@ class TweetFinder extends Component {
     }
 
 
-    // Handle Change for user input on search field
-    handleChange(event) {
-        this.setState({ input: event.target.value })
-    }
-
-
     startSearchingHandler = () => {
         this.setState({ searching: true });
 
-        axios.get('http://localhost:5000/api/tweets')
+        axios.get(`http://localhost:5000/api/tweets?q=${this.state.keyword}`)
             .then(response => {
-                console.log('data: ', response.data);
+                //console.log('data: ', response.data);
                 this.setState({ tweets: response.data });
             })
-        /*.then(function (data) {
-            console.log('data: ', data);
-            //this.setState({ tweets: data });
-        });*/
-
+            .catch(error => {
+                console.log("Error Message: " + error);
+            });
     };
 
 

@@ -7,8 +7,9 @@ const port = process.env.PORT || 5000;
 
 
 // Send a GET request to /api/tweets to VIEW a list of tweets
-app.get('/api/tweets', (req, res) => {
-    const url = 'https://api.twitter.com/1.1/search/tweets.json?q=cars';
+app.get('/api/tweets/', (req, res) => {
+    const url = `https://api.twitter.com/1.1/search/tweets.json?q=${req.query.q}`;
+
 
     const config = {
         headers: { 'Authorization': "Bearer " + process.env.REACT_APP_TWITTER_BEARER_TOKEN }
@@ -17,7 +18,7 @@ app.get('/api/tweets', (req, res) => {
     axios.get(url, config)
         .then((response) => {
             res.send(response.data.statuses);
-            console.log(response.data.statuses);
+            //console.log(response.data.statuses);
         })
         .catch((error) => {
             res.sendStatus(500);

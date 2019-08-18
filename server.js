@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 
 // Send a GET request to /api/tweets to VIEW a list of tweets
 app.get('/api/tweets/', (req, res) => {
-    const url = `https://api.twitter.com/1.1/search/tweets.json?q=${req.query.q}`;
+    const url = `https://api.twitter.com/1.1/search/tweets.json?q=${req.query.q}&lang=en`;
 
 
     const config = {

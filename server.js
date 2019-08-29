@@ -28,13 +28,23 @@ app.get('/api/tweets/', (req, res) => {
 
 
 // Send a GET request to /api/tweets/tweet/random to VIEW a random tweet
-app.get('/random', function (req, res) {
-    let user = req.query.user;
-    const action = (error, response) => {
-        let tweets = extractTweet(response.body).sort(() => .5 - Math.random()).slice(0, 5);
-        res.send(tweets);
+app.get('/api/random/', (req, res) => {
+    const url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=elonmusk';
+
+
+    const config = {
+        headers: { 'Authorization': "Bearer " + process.env.REACT_APP_TWITTER_BEARER_TOKEN }
     }
-    getTimeline(user, action);
+
+    axios.get(url, config)
+        .then((response) => {
+            //res.send(response.data.statuses);
+            console.log(response);
+        })
+        .catch((error) => {
+            res.sendStatus(500);
+        })
+
 });
 
 // serve static build files from React app

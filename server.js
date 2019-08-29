@@ -28,6 +28,14 @@ app.get('/api/tweets/', (req, res) => {
 
 
 // Send a GET request to /api/tweets/tweet/random to VIEW a random tweet
+app.get('/random', function (req, res) {
+    let user = req.query.user;
+    const action = (error, response) => {
+        let tweets = extractTweet(response.body).sort(() => .5 - Math.random()).slice(0, 5);
+        res.send(tweets);
+    }
+    getTimeline(user, action);
+});
 
 // serve static build files from React app
 app.use('/js', express.static(path.join(__dirname, 'react/build/js')));

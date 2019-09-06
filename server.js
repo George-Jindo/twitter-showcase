@@ -29,7 +29,7 @@ app.get('/api/tweets/', (req, res) => {
 
 // Send a GET request to /api/tweets/tweet/random to VIEW a random tweet
 app.get('/api/random/', (req, res) => {
-    const url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=elonmusk';
+    const url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=elonmusk&count=1';
 
 
     const config = {
@@ -38,8 +38,8 @@ app.get('/api/random/', (req, res) => {
 
     axios.get(url, config)
         .then((response) => {
-            //res.send(response.data.statuses);
-            console.log(response);
+            res.send(response.data);
+            //console.log(response);
         })
         .catch((error) => {
             res.sendStatus(500);

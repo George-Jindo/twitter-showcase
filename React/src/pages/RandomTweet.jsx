@@ -3,12 +3,14 @@ import { Grid, Cell } from 'react-mdl';
 import axios from "axios";
 import favorites from "../favoriteUsers.js";
 
+console.log(favorites);
+
 
 class RandomTweet extends Component {
     constructor() {
         super();
         this.state = {
-            users: favorites,
+            user: favorites,
             tweets: []
         };
     }
@@ -25,7 +27,10 @@ class RandomTweet extends Component {
 
     };
 
+
+
     render() {
+        const favorites = this.state.user;
 
         return (
             <div style={{ marginTop: '75px', width: '100%', height: '100%' }}>
@@ -35,7 +40,7 @@ class RandomTweet extends Component {
                         <div className="card-wrapper">
                             <div className="card">
                                 <img src="./images/kinggeorge.jpg" alt="banner" className="card-img"></img>
-                                <img src={favorites.user.profile_image_url_https} alt="profile image" className="profile-img"></img>
+                                <img src={favorites.profile_image_url_https} alt="profile image" className="profile-img"></img>
                             </div>
                         </div>
                     </div>

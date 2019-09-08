@@ -7,7 +7,7 @@ body {
   padding: 0;
   font-family: 'Allerta', sans-serif;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .btn-modal {

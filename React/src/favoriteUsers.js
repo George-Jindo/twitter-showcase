@@ -23,7 +23,7 @@ const favorites = [
             name: "SMii7Y",
             screen_name: "SMii7Y",
             profile_image_url_https:
-                "https://pbs.twimg.com/profile_images/1100096838303186945/1nXfKlQ-_reasonably_small.png"
+                "https://pbs.twimg.com/profile_images/1100096838303186945/1nXfKlQ-_bigger.png"
         }
     },
     {
@@ -32,7 +32,7 @@ const favorites = [
             name: "Elon Musk",
             screen_name: "elonmusk",
             profile_image_url_https:
-                "https://pbs.twimg.com/profile_images/1163869972633808897/EPuBFf_K_reasonably_small.jpg"
+                "https://pbs.twimg.com/profile_images/1163869972633808897/EPuBFf_K_bigger.jpg"
         }
     },
     {

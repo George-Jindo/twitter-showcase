@@ -11,13 +11,19 @@ class RandomTweet extends Component {
     constructor() {
         super();
         this.state = {
+            screenName: '',
             user: favorites,
             tweets: []
         };
     }
 
+    updateScreenName(event) {
+        this.setState({ screenName: event.target.value });
+        console.log(event.target.value);
+    }
+
     onClickHandler = () => {
-        axios.get('http://localhost:5000/api/random/')
+        axios.get(`http://localhost:5000/api/random?screen_name=${this.state.screenName}`)
             .then(response => {
                 console.log({ tweets: response.data });
                 //this.setState({ tweets: response.data });
@@ -52,6 +58,7 @@ class RandomTweet extends Component {
                                 <button
                                     className="btn-rnd"
                                     value="kinggeorge"
+                                    onClick={this.onClickHandler}
                                 >
                                     Reveal Tweet
                                 </button>
@@ -70,6 +77,7 @@ class RandomTweet extends Component {
                                 <button
                                     className="btn-rnd"
                                     value="ign"
+                                    onClick={this.onClickHandler}
                                 >
                                     Reveal Tweet
                                 </button>
@@ -88,6 +96,7 @@ class RandomTweet extends Component {
                                 <button
                                     className="btn-rnd"
                                     value="SMii7y"
+                                    onClick={this.onClickHandler}
                                 >
                                     Reveal Tweet
                                 </button>
@@ -106,6 +115,7 @@ class RandomTweet extends Component {
                                 <button
                                     className="btn-rnd"
                                     value="elonmusk"
+                                    onClick={this.onClickHandler}
                                 >
                                     Reveal Tweet
                                 </button>
@@ -124,6 +134,7 @@ class RandomTweet extends Component {
                                 <button
                                     className="btn-rnd"
                                     value="rainbow6game"
+                                    onClick={this.onClickHandler}
                                 >
                                     Reveal Tweet
                                 </button>

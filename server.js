@@ -29,7 +29,7 @@ app.get('/api/tweets/', (req, res) => {
 
 // Send a GET request to /api/tweets/tweet/random to VIEW a random tweet
 app.get('/api/random/', (req, res) => {
-    const url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=elonmusk&count=1';
+    const url = `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${req.query.screen_name}`;
 
 
     const config = {

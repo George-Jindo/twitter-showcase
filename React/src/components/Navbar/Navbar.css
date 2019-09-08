@@ -51,6 +51,8 @@
 .navbar_items a:hover,
 .navbar_items a:active {
     color: white;
+    text-decoration: underline;
+    z-index: 1000;
 }
 
 @media (max-width: 768px) {

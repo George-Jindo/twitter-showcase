@@ -157,3 +157,15 @@ section{
     transform: scale(1.05);
   }
 }
+
+.btn-modal {
+  background: #1DA1F2;
+  font: inherit;
+  border: 1px soplid #1DA1F2;
+  border-radius: 3px;
+  padding: 0.25rem 0.5rem;
+  margin-right: 1rem;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+  color: white;
+  cursor: pointer;
+}

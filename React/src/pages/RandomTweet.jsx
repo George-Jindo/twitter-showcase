@@ -13,17 +13,20 @@ class RandomTweet extends Component {
         this.state = {
             screenName: '',
             user: favorites,
-            tweets: []
+            tweets: [],
+            showResults: false
         };
     }
 
-    updateScreenName(event) {
+    /*updateScreenName(event) {
         this.setState({ screenName: event.target.value });
         console.log(event.target.value);
-    }
+    }*/
 
-    onClickHandler = () => {
-        axios.get(`http://localhost:5000/api/random?screen_name=${this.state.screenName}`)
+    onClickHandler = (event) => {
+        this.setState({ showResults: true });
+
+        axios.get(`http://localhost:5000/api/random?screen_name=${event.target.value}`)
             .then(response => {
                 console.log({ tweets: response.data });
                 //this.setState({ tweets: response.data });
@@ -34,6 +37,9 @@ class RandomTweet extends Component {
 
     };
 
+    resultsCloseHandler = () => {
+        this.setState({ showResults: false });
+    };
 
 
     render() {
@@ -59,9 +65,16 @@ class RandomTweet extends Component {
                                     className="btn-rnd"
                                     value="kinggeorge"
                                     onClick={this.onClickHandler}
+                                    onClose={this.resultsCloseHandler}
                                 >
                                     Reveal Tweet
                                 </button>
+                                {this.state.showResults && (
+                                    <div className="show-results" onClose={this.resultsCloseHandler}>
+                                        {<button className="btn-modal" onClick={this.resultsCloseHandler}>Close</button>}
+                                        <p>Show something here.</p>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="card">

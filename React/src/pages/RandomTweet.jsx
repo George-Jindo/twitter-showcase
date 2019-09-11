@@ -49,7 +49,7 @@ class RandomTweet extends Component {
             <div style={{ marginTop: '75px', width: '100%', height: '100%' }}>
                 <section>
                     <div className="container">
-                        <h1 className="heading">My Favorite Users</h1>
+                        <h1 className="heading">Random Tweets</h1>
                         <div className="card-wrapper">
                             <div className="card">
                                 <img src="./images/kinggeorge.jpg" alt="banner" className="card-img"></img>
@@ -69,10 +69,10 @@ class RandomTweet extends Component {
                                 >
                                     Reveal Tweet
                                 </button>
-                                {this.state.showResults && (
+                                {this.state.showResults && this.state.tweets && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
                                         {<button className="btn-modal" onClick={this.resultsCloseHandler}>Close</button>}
-                                        <p>Show something here.</p>
+                                        <p>{tweets[0].text}</p>
                                     </div>
                                 )}
                             </div>

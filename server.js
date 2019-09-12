@@ -38,7 +38,7 @@ app.get('/api/random/', (req, res) => {
 
     axios.get(url, config)
         .then((response) => {
-            res.send(response.data);
+            res.send(response.data[0]);
             //console.log(response);
         })
         .catch((error) => {
@@ -46,6 +46,8 @@ app.get('/api/random/', (req, res) => {
         })
 
 });
+
+
 
 // serve static build files from React app
 app.use('/js', express.static(path.join(__dirname, 'react/build/js')));

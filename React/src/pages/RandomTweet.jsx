@@ -13,7 +13,7 @@ class RandomTweet extends Component {
         this.state = {
             screenName: '',
             user: favorites,
-            tweets: [],
+            randomTweet: null,
             showResults: false
         };
     }
@@ -24,12 +24,14 @@ class RandomTweet extends Component {
     }*/
 
     onClickHandler = (event) => {
-        this.setState({ showResults: true });
+        this.setState({
+            showResults: true
+        });
 
         axios.get(`http://localhost:5000/api/random?screen_name=${event.target.value}`)
             .then(response => {
-                console.log({ tweets: response.data });
-                //this.setState({ tweets: response.data });
+                console.log({ randomTweet: response.data });
+                this.setState({ randomTweet: response.data });
             })
             .catch(error => {
                 console.log("Error Message: " + error);
@@ -38,7 +40,9 @@ class RandomTweet extends Component {
     };
 
     resultsCloseHandler = () => {
-        this.setState({ showResults: false });
+        this.setState({
+            showResults: false
+        });
     };
 
 
@@ -56,11 +60,6 @@ class RandomTweet extends Component {
                                 <img src={favorites[0].user.profile_image_url_https} alt="profile image" className="profile-img"></img>
                                 <h1>{favorites[0].user.name}</h1>
                                 <p className="screen-name">@{favorites[0].user.screen_name}</p>
-                                <p className="about">
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text.
-                                    It has roots in a piece of classical Latin literature from 45 BC,
-                                    making it over 2000 years old.
-                                </p>
                                 <button
                                     className="btn-rnd"
                                     value="kinggeorge"
@@ -69,10 +68,10 @@ class RandomTweet extends Component {
                                 >
                                     Reveal Tweet
                                 </button>
-                                {this.state.showResults && this.state.tweets && (
+                                {this.state.showResults && this.state.randomTweet !== null && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
-                                        {<button className="btn-modal" onClick={this.resultsCloseHandler}>Close</button>}
-                                        <p>{tweets[0].text}</p>
+                                        {<button className="btn-modal-1" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        <p className="about">{this.state.randomTweet.text}</p>
                                     </div>
                                 )}
                             </div>
@@ -82,18 +81,20 @@ class RandomTweet extends Component {
                                 <img src={favorites[1].user.profile_image_url_https} alt="profile image" className="profile-img"></img>
                                 <h1>{favorites[1].user.name}</h1>
                                 <p className="screen-name">@{favorites[1].user.screen_name}</p>
-                                <p className="about">
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text.
-                                    It has roots in a piece of classical Latin literature from 45 BC,
-                                    making it over 2000 years old.
-                                </p>
                                 <button
                                     className="btn-rnd"
                                     value="ign"
                                     onClick={this.onClickHandler}
+                                    onClose={this.resultsCloseHandler}
                                 >
                                     Reveal Tweet
                                 </button>
+                                {this.state.showResults && this.state.randomTweet !== null && (
+                                    <div className="show-results" onClose={this.resultsCloseHandler}>
+                                        {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        <p className="about">{this.state.randomTweet.text}</p>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="card">
@@ -101,15 +102,11 @@ class RandomTweet extends Component {
                                 <img src={favorites[2].user.profile_image_url_https} alt="profile image" className="profile-img"></img>
                                 <h1>{favorites[2].user.name}</h1>
                                 <p className="screen-name">@{favorites[2].user.screen_name}</p>
-                                <p className="about">
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text.
-                                    It has roots in a piece of classical Latin literature from 45 BC,
-                                    making it over 2000 years old.
-                                </p>
                                 <button
                                     className="btn-rnd"
                                     value="SMii7y"
                                     onClick={this.onClickHandler}
+                                    onClose={this.resultsCloseHandler}
                                 >
                                     Reveal Tweet
                                 </button>
@@ -120,15 +117,11 @@ class RandomTweet extends Component {
                                 <img src={favorites[3].user.profile_image_url_https} alt="profile image" className="profile-img"></img>
                                 <h1>{favorites[3].user.name}</h1>
                                 <p className="screen-name">@{favorites[3].user.screen_name}</p>
-                                <p className="about">
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text.
-                                    It has roots in a piece of classical Latin literature from 45 BC,
-                                    making it over 2000 years old.
-                                </p>
                                 <button
                                     className="btn-rnd"
                                     value="elonmusk"
                                     onClick={this.onClickHandler}
+                                    onClose={this.resultsCloseHandler}
                                 >
                                     Reveal Tweet
                                 </button>
@@ -139,15 +132,11 @@ class RandomTweet extends Component {
                                 <img src={favorites[4].user.profile_image_url_https} alt="profile image" className="profile-img"></img>
                                 <h1>{favorites[4].user.name}</h1>
                                 <p className="screen-name">@{favorites[4].user.screen_name}</p>
-                                <p className="about">
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text.
-                                    It has roots in a piece of classical Latin literature from 45 BC,
-                                    making it over 2000 years old.
-                                </p>
                                 <button
                                     className="btn-rnd"
                                     value="rainbow6game"
                                     onClick={this.onClickHandler}
+                                    onClose={this.resultsCloseHandler}
                                 >
                                     Reveal Tweet
                                 </button>

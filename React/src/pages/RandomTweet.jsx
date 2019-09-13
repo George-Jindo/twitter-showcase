@@ -68,7 +68,7 @@ class RandomTweet extends Component {
                                 >
                                     Reveal Tweet
                                 </button>
-                                {this.state.showResults && this.state.randomTweet !== null && (
+                                {this.state.showResults && this.state.randomTweet !== null && event.target.value == "kinggeorge" && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
                                         {<button className="btn-modal-1" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
                                         <p className="about">{this.state.randomTweet.text}</p>
@@ -89,7 +89,7 @@ class RandomTweet extends Component {
                                 >
                                     Reveal Tweet
                                 </button>
-                                {this.state.showResults && this.state.randomTweet !== null && (
+                                {this.state.showResults && this.state.randomTweet !== null && event.target.value == "ign" && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
                                         {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
                                         <p className="about">{this.state.randomTweet.text}</p>
@@ -110,6 +110,12 @@ class RandomTweet extends Component {
                                 >
                                     Reveal Tweet
                                 </button>
+                                {this.state.showResults && this.state.randomTweet !== null && event.target.value == "SMii7y" && (
+                                    <div className="show-results" onClose={this.resultsCloseHandler}>
+                                        {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        <p className="about">{this.state.randomTweet.text}</p>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="card">
@@ -125,6 +131,12 @@ class RandomTweet extends Component {
                                 >
                                     Reveal Tweet
                                 </button>
+                                {this.state.showResults && this.state.randomTweet !== null && event.target.value == "elonmusk" && (
+                                    <div className="show-results" onClose={this.resultsCloseHandler}>
+                                        {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        <p className="about">{this.state.randomTweet.text}</p>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="card">
@@ -140,6 +152,12 @@ class RandomTweet extends Component {
                                 >
                                     Reveal Tweet
                                 </button>
+                                {this.state.showResults && this.state.randomTweet !== null && event.target.value == "rainbow6game" && (
+                                    <div className="show-results" onClose={this.resultsCloseHandler}>
+                                        {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        <p className="about">{this.state.randomTweet.text}</p>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

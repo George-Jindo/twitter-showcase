@@ -4,7 +4,7 @@ import axios from "axios";
 import './RandomTweet.css';
 import favorites from "../favoriteUsers.js";
 
-console.log(favorites);
+const moment = require("moment");
 
 
 class RandomTweet extends Component {
@@ -68,10 +68,15 @@ class RandomTweet extends Component {
                                 >
                                     Reveal Tweet
                                 </button>
-                                {this.state.showResults && this.state.randomTweet !== null && event.target.value == "kinggeorge" && (
+                                {this.state.showResults && this.state.randomTweet !== null && this.state.randomTweet.user.screen_name === "KingGeorge" && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
                                         {<button className="btn-modal-1" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        <p className="time">{this.state.randomTweet.created_at}</p>
                                         <p className="about">{this.state.randomTweet.text}</p>
+                                        <div className="icons">
+                                            <i className="fas fa-heart">&nbsp;{this.state.randomTweet.favorite_count}</i>
+                                            <i className="fas fa-retweet">&nbsp;{this.state.randomTweet.retweet_count}</i>
+                                        </div>
                                     </div>
                                 )}
                             </div>
@@ -89,10 +94,15 @@ class RandomTweet extends Component {
                                 >
                                     Reveal Tweet
                                 </button>
-                                {this.state.showResults && this.state.randomTweet !== null && event.target.value == "ign" && (
+                                {this.state.showResults && this.state.randomTweet !== null && this.state.randomTweet.user.screen_name === "IGN" && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
                                         {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        <p className="time">{this.state.randomTweet.created_at}</p>
                                         <p className="about">{this.state.randomTweet.text}</p>
+                                        <div className="icons">
+                                            <i className="fas fa-heart">{this.state.randomTweet.favorite_count}</i>
+                                            <i className="fas fa-retweet">{this.state.randomTweet.retweet_count}</i>
+                                        </div>
                                     </div>
                                 )}
                             </div>
@@ -110,10 +120,15 @@ class RandomTweet extends Component {
                                 >
                                     Reveal Tweet
                                 </button>
-                                {this.state.showResults && this.state.randomTweet !== null && event.target.value == "SMii7y" && (
+                                {this.state.showResults && this.state.randomTweet !== null && this.state.randomTweet.user.screen_name === "SMii7Y" && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
                                         {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        <p className="time">{this.state.randomTweet.created_at}</p>
                                         <p className="about">{this.state.randomTweet.text}</p>
+                                        <div className="icons">
+                                            <i className="fas fa-heart">{this.state.randomTweet.favorite_count}</i>
+                                            <i className="fas fa-retweet">{this.state.randomTweet.retweet_count}</i>
+                                        </div>
                                     </div>
                                 )}
                             </div>
@@ -131,10 +146,15 @@ class RandomTweet extends Component {
                                 >
                                     Reveal Tweet
                                 </button>
-                                {this.state.showResults && this.state.randomTweet !== null && event.target.value == "elonmusk" && (
+                                {this.state.showResults && this.state.randomTweet !== null && this.state.randomTweet.user.screen_name === "elonmusk" && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
                                         {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        <p className="time">{this.state.randomTweet.created_at}</p>
                                         <p className="about">{this.state.randomTweet.text}</p>
+                                        <div className="icons">
+                                            <i className="fas fa-heart">{this.state.randomTweet.favorite_count}</i>
+                                            <i className="fas fa-retweet">{this.state.randomTweet.retweet_count}</i>
+                                        </div>
                                     </div>
                                 )}
                             </div>
@@ -152,10 +172,15 @@ class RandomTweet extends Component {
                                 >
                                     Reveal Tweet
                                 </button>
-                                {this.state.showResults && this.state.randomTweet !== null && event.target.value == "rainbow6game" && (
+                                {this.state.showResults && this.state.randomTweet !== null && this.state.randomTweet.user.screen_name === "Rainbow6Game" && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
                                         {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        <p className="time">{this.state.randomTweet.created_at}</p>
                                         <p className="about">{this.state.randomTweet.text}</p>
+                                        <div className="icons">
+                                            <i className="fas fa-heart">{this.state.randomTweet.favorite_count}</i>
+                                            <i className="fas fa-retweet">{this.state.randomTweet.retweet_count}</i>
+                                        </div>
                                     </div>
                                 )}
                             </div>

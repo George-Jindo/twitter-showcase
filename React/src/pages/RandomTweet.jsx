@@ -96,7 +96,7 @@ class RandomTweet extends Component {
                                 </button>
                                 {this.state.showResults && this.state.randomTweet !== null && this.state.randomTweet.user.screen_name === "IGN" && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
-                                        {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        {<button className="btn-modal-1" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
                                         <p className="time">{this.state.randomTweet.created_at}</p>
                                         <p className="about">{this.state.randomTweet.text}</p>
                                         <div className="icons">
@@ -122,7 +122,7 @@ class RandomTweet extends Component {
                                 </button>
                                 {this.state.showResults && this.state.randomTweet !== null && this.state.randomTweet.user.screen_name === "SMii7Y" && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
-                                        {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        {<button className="btn-modal-1" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
                                         <p className="time">{this.state.randomTweet.created_at}</p>
                                         <p className="about">{this.state.randomTweet.text}</p>
                                         <div className="icons">
@@ -148,7 +148,7 @@ class RandomTweet extends Component {
                                 </button>
                                 {this.state.showResults && this.state.randomTweet !== null && this.state.randomTweet.user.screen_name === "elonmusk" && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
-                                        {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        {<button className="btn-modal-1" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
                                         <p className="time">{this.state.randomTweet.created_at}</p>
                                         <p className="about">{this.state.randomTweet.text}</p>
                                         <div className="icons">
@@ -174,7 +174,7 @@ class RandomTweet extends Component {
                                 </button>
                                 {this.state.showResults && this.state.randomTweet !== null && this.state.randomTweet.user.screen_name === "Rainbow6Game" && (
                                     <div className="show-results" onClose={this.resultsCloseHandler}>
-                                        {<button className="btn-modal-2" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
+                                        {<button className="btn-modal-1" onClick={this.resultsCloseHandler}>Hide Tweet</button>}
                                         <p className="time">{this.state.randomTweet.created_at}</p>
                                         <p className="about">{this.state.randomTweet.text}</p>
                                         <div className="icons">

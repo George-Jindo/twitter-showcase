@@ -27,7 +27,7 @@ app.get('/api/tweets/', (req, res) => {
         });
 });
 
-// Send a GET request to /api/tweets/tweet/random to VIEW a random tweet
+// Send a GET request to /api/random to VIEW a random tweet
 app.get('/api/random/', (req, res) => {
     function count(max) {
         return Math.floor(Math.random() * Math.floor(max));

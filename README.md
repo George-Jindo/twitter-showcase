@@ -11,7 +11,7 @@ To view live on Heroku <a href="https://twitter-showcase.herokuapp.com/" target=
 <img src="./readme-images/javascript.png" >&nbsp;&nbsp;
 <img src="./readme-images/node.png" >&nbsp;&nbsp;
 <img src="./readme-images/html5.png" >&nbsp;&nbsp;
-<img src="./readme-images/css3.png" >&nbsp;&nbsp;
+<img src="./readme-images/CSS3.png" >&nbsp;&nbsp;
 <img src="./readme-images/postman.png" >&nbsp;&nbsp;
 <img src="./readme-images/heroku.png" >
 

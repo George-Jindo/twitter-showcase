@@ -1,34 +1,36 @@
 {
-  "name": "twitter-showcase",
-  "version": "1.0.0",
-  "description": "React/Node Twitter App",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"nodemon server.js\" \"npm run watch --prefix react\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/George-Jindo/twitter-showcase.git"
-  },
-  "keywords": [
-    "twitter"
-  ],
-  "author": "George Jindo",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/George-Jindo/twitter-showcase/issues"
-  },
-  "homepage": "https://github.com/George-Jindo/twitter-showcase#readme",
-  "dependencies": {
-    "axios": "^0.19.0",
-    "cors": "^2.8.5",
-    "dotenv": "^8.0.0",
-    "express": "^4.17.1",
-    "moment": "^2.24.0"
-  },
-  "devDependencies": {
-    "concurrently": "^4.1.1",
-    "nodemon": "^1.19.1"
-  }
+    "name": "twitter-showcase",
+    "version": "1.0.0",
+    "description": "React/Node Twitter App",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "dev": "concurrently \"nodemon server.js\" \"npm run watch --prefix react\"",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix React && npm run build --prefix React"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/George-Jindo/twitter-showcase.git"
+    },
+    "keywords": [
+        "twitter"
+    ],
+    "author": "George Jindo",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/George-Jindo/twitter-showcase/issues"
+    },
+    "homepage": "https://github.com/George-Jindo/twitter-showcase#readme",
+    "dependencies": {
+        "axios": "^0.19.0",
+        "cors": "^2.8.5",
+        "dotenv": "^8.0.0",
+        "express": "^4.17.1",
+        "moment": "^2.24.0"
+    },
+    "devDependencies": {
+        "concurrently": "^4.1.1",
+        "nodemon": "^1.19.1"
+    }
 }

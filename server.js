@@ -53,6 +53,7 @@ app.get('/api/random/', (req, res) => {
         });
 });
 
+/*
 // serve static build files from React app
 app.use('/js', express.static(path.join(__dirname, 'react/build/js')));
 app.use(
@@ -61,6 +62,7 @@ app.use(
 );
 app.use('/media', express.static(path.join(__dirname, 'react/build/media')));
 app.use('/images', express.static(path.join(__dirname, 'react/build/images')));
+*/
 
 // create a GET route
 app.get('/*', (req, res) => {

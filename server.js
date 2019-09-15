@@ -45,7 +45,7 @@ app.get('/api/random/', (req, res) => {
     axios
         .get(url, config, count)
         .then(response => {
-            res.send(response.data[count(20)]);
+            res.send(response.data[count(response.data.length)]);
             //console.log(response);
         })
         .catch(error => {

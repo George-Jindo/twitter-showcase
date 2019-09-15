@@ -62,6 +62,19 @@ app.use(
 app.use('/media', express.static(path.join(__dirname, 'react/build/media')));
 app.use('/images', express.static(path.join(__dirname, 'react/build/images')));
 
+// serve static files to run build in deployment
+app.use(
+    '/js',
+    express.static(
+        path.join(
+            __dirname,
+            process.env.environment === 'DEV'
+                ? 'react/build/js'
+                : 'react/build/static/js'
+        )
+    )
+);
+
 // create a GET route
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'React', 'build', 'index.html'));

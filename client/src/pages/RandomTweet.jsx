@@ -105,7 +105,7 @@ class RandomTweet extends Component {
                             </div>
 
                             <div className="card">
-                                <img src="./images/SMii7y.jpg" alt="banner" className="card-img"></img>
+                                <img src="./images/SMii7Y.jpg" alt="banner" className="card-img"></img>
                                 <img src={favorites[2].user.profile_image_url_https} alt="profile image" className="profile-img"></img>
                                 <h1>{favorites[2].user.name}</h1>
                                 <p className="screen-name">@{favorites[2].user.screen_name}</p>

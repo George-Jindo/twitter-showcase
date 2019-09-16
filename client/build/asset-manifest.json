@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ed41c6ac.chunk.css",
+    "main.js": "/static/js/main.09f6dc57.chunk.js",
+    "main.js.map": "/static/js/main.09f6dc57.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.43eca46b.chunk.js": "/static/js/2.43eca46b.chunk.js",
+    "static/js/2.43eca46b.chunk.js.map": "/static/js/2.43eca46b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.fbecf59c2f3987c7ba9f7c6b55521c0d.js": "/precache-manifest.fbecf59c2f3987c7ba9f7c6b55521c0d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.ed41c6ac.chunk.css.map": "/static/css/main.ed41c6ac.chunk.css.map",
+    "static/media/Modal.css": "/static/media/birds.623f6b1b.jpg",
+    "static/media/ts-png-8.png": "/static/media/ts-png-8.879a806f.png"
+  }
+}

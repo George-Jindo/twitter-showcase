@@ -53,16 +53,20 @@ app.get('/api/random/', (req, res) => {
         });
 });
 
-/*
 // serve static build files from React app
-app.use('/js', express.static(path.join(__dirname, 'react/build/js')));
+app.use('/js', express.static(path.join(__dirname, 'react/build//static/js')));
 app.use(
     '/manifest.json',
-    express.static(path.join(__dirname, 'react/build/manifest.json'))
+    express.static(path.join(__dirname, 'react/build/static/manifest.json'))
 );
-app.use('/media', express.static(path.join(__dirname, 'react/build/media')));
-app.use('/images', express.static(path.join(__dirname, 'react/build/images')));
-*/
+app.use(
+    '/media',
+    express.static(path.join(__dirname, 'react/build/static/media'))
+);
+app.use(
+    '/images',
+    express.static(path.join(__dirname, 'react/build/static/images'))
+);
 
 // create a GET route
 app.get('/*', (req, res) => {

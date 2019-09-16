@@ -53,6 +53,7 @@ app.get('/api/random/', (req, res) => {
         });
 });
 
+/*
 // serve static build files from React app
 app.use('/js', express.static(path.join(__dirname, 'react/build/static/js')));
 app.use(
@@ -64,11 +65,22 @@ app.use(
     express.static(path.join(__dirname, 'react/build/static/media'))
 );
 app.use('/images', express.static(path.join(__dirname, 'react/build/images')));
+*/
+
+// Serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+    // Set static folder
+    app.use(express.static('client/build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+}
 
 // create a GET route
-app.get('/*', (req, res) => {
+/*app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'React', 'build', 'index.html'));
 });
-
+*/
 // console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));

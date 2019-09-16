@@ -16,33 +16,30 @@ class TweetFinder extends Component {
         };
     }
 
-
     //Creates the Keyword value to user input
     updateKeyword(event) {
         this.setState({ keyword: event.target.value });
     }
 
-
     startSearchingHandler = () => {
         this.setState({ searching: true });
 
-        axios.get(`http://localhost:5000/api/tweets?q=${this.state.keyword}`)
+        axios
+            .get(`/api/tweets?q=${this.state.keyword}`)
             .then(response => {
                 //console.log('data: ', response.data);
                 this.setState({ tweets: response.data });
             })
             .catch(error => {
-                console.log("Error Message: " + error);
+                console.log('Error Message: ' + error);
             });
     };
-
 
     modalCloseHandler = () => {
         this.setState({ searching: false });
     };
 
     render() {
-
         return (
             <React.Fragment>
                 <div

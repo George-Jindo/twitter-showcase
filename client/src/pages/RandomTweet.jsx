@@ -25,7 +25,7 @@ class RandomTweet extends Component {
             showResults: true
         });
 
-        axios.get(`http://localhost:5000/api/random?screen_name=${event.target.value}`)
+        axios.get(`/api/random?screen_name=${event.target.value}`)
             .then(response => {
                 console.log({ randomTweet: response.data });
                 this.setState({ randomTweet: response.data });

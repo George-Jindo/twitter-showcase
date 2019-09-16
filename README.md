@@ -3,7 +3,7 @@
 > This documentation is for my Twitter Search Showcase app. An app designed to search for Tweets using keywords and also a showcase of 5 of my favorite Twitter users that displays a random Tweet from them with the click of a button.
 
 The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br>
-To view live on Heroku <a href="https://twitter-showcase.herokuapp.com/" target="_blank">CLICK HERE</a>.
+To view live on Heroku <a href="https://showcase-tweets.herokuapp.com" target="_blank">CLICK HERE</a>.
 
 <img src="./readme-images/Home_Screen.png" alt="Home_Image"></img>
 

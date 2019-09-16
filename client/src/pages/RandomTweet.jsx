@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import { Grid, Cell } from 'react-mdl';
 import axios from "axios";
 import './RandomTweet.css';
-import favorites from "../favoriteUsers.js.js.js.js";
-
-const moment = require("moment");
+import favorites from "../favoriteUsers.js";
 
 
 class RandomTweet extends Component {

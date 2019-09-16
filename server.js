@@ -54,7 +54,7 @@ app.get('/api/random/', (req, res) => {
 });
 
 // serve static build files from React app
-app.use('/js', express.static(path.join(__dirname, 'react/build//static/js')));
+app.use('/js', express.static(path.join(__dirname, 'react/build/static/js')));
 app.use(
     '/manifest.json',
     express.static(path.join(__dirname, 'react/build/manifest.json'))

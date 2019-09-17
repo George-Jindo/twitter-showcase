@@ -56,20 +56,6 @@ app.get('/api/random/', (req, res) => {
         });
 });
 
-/*
-// serve static build files from React app
-app.use('/js', express.static(path.join(__dirname, 'react/build/static/js')));
-app.use(
-    '/manifest.json',
-    express.static(path.join(__dirname, 'react/build/manifest.json'))
-);
-app.use(
-    '/media',
-    express.static(path.join(__dirname, 'react/build/static/media'))
-);
-app.use('/images', express.static(path.join(__dirname, 'react/build/images')));
-*/
-
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
@@ -80,24 +66,5 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-// create a GET route
-/*app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'React', 'build', 'index.html'));
-});
-*/
 // console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));
-
-/*
-// Allow credentials for CORS
-app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header(
-        'Access-Control-Allow-Headers',
-        'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
-    );
-    next();
-});
-*/

@@ -23,7 +23,6 @@ app.get('/api/tweets/', (req, res) => {
         .get(url, config)
         .then(response => {
             res.send(response.data.statuses);
-            //console.log(response.data.statuses);
         })
         .catch(error => {
             res.sendStatus(500);
@@ -32,24 +31,26 @@ app.get('/api/tweets/', (req, res) => {
 
 // Send a GET request to /api/random to VIEW a random tweet
 app.get('/api/random/', (req, res) => {
-    function count(max) {
-        return Math.floor(Math.random() * Math.floor(max));
-    }
-
-    const url = `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${req.query.screen_name}&count=20`;
+    const url = `https://api.twitter.com/1.1/statuses/user_timeline.json`;
 
     const config = {
         headers: {
             Authorization:
                 'Bearer ' + process.env.REACT_APP_TWITTER_BEARER_TOKEN
+        },
+        params: {
+            count: 20,
+            screen_name: req.query.screen_name
         }
     };
 
     axios
         .get(url, config, count)
         .then(response => {
-            res.send(response.data[count(response.data.length)]);
-            //console.log(response);
+            const randomIndex = Math.floor(
+                Math.random() * Math.floor(response.data.length)
+            );
+            res.send(response.data[randomIndex]);
         })
         .catch(error => {
             res.sendStatus(500);

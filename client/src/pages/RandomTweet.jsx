@@ -15,11 +15,6 @@ class RandomTweet extends Component {
         };
     }
 
-    /*updateScreenName(event) {
-        this.setState({ screenName: event.target.value });
-        console.log(event.target.value);
-    }*/
-
     onClickHandler = (event) => {
         this.setState({
             showResults: true
@@ -27,7 +22,6 @@ class RandomTweet extends Component {
 
         axios.get(`/api/random?screen_name=${event.target.value}`)
             .then(response => {
-                console.log({ randomTweet: response.data });
                 this.setState({ randomTweet: response.data });
             })
             .catch(error => {

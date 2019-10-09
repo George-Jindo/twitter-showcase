@@ -27,7 +27,6 @@ class TweetFinder extends Component {
         axios
             .get(`/api/tweets?q=${this.state.keyword}`)
             .then(response => {
-                //console.log('data: ', response.data);
                 this.setState({ tweets: response.data });
             })
             .catch(error => {
